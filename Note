@@ -1,0 +1,23 @@
+修改npm yuidoc目录 lib\builder.js,在第803行插入下边这句,下行代码的作用是 将&#x2F;替换为/ 
+----------
+html = html.replace(/<(.*?)>/g,function($,$1){var ret=[];ret.push('<');ret.push($1.replace(/&#x2F;/g,'/'));ret.push('>');return ret.join('')})
+
+
+
+yuidoc.json 
+-----------
+
+-http://yui.github.com/yuidoc/args/index.html#ex-yuidoc
+
+example:
+{
+    "name": "The Foo API",
+    "description": "The Foo API: a library for doing X, Y, and Z",
+    "version": "1.2.1",
+    "url": "http://example.com/",
+    "options": {
+        "outdir"	: "./out",
+	"themedir"	: "E:\\My Doc\\htdocs\\myFile\\JS\\utils\\theme4chm",
+	"ignorePaths": [ "tmp" ]
+    }
+}
